@@ -13,6 +13,8 @@
   ->snake_case
   ->kebab-case
   ->HTTP-Header-Case
+  ->Sentence
+  ->Title
 
   ->PascalCaseKeyword
   ->camelCaseKeyword
@@ -21,6 +23,8 @@
   ->kebab-case-keyword
   ->Camel_Snake_Case_Keyword
   ->HTTP-Header-Case-Keyword
+  ->Sentencekeyword
+  ->TitleKeyword
 
   ->PascalCaseString
   ->camelCaseString
@@ -29,6 +33,8 @@
   ->kebab-case-string
   ->Camel_Snake_Case_String
   ->HTTP-Header-Case-String
+  ->Sentencestring
+  ->TitleString
 
   ->PascalCaseSymbol
   ->camelCaseSymbol
@@ -36,7 +42,9 @@
   ->snake_case_symbol
   ->kebab-case-symbol
   ->Camel_Snake_Case_Symbol
-  ->HTTP-Header-Case-Symbol)
+  ->HTTP-Header-Case-Symbol
+  ->Sentencesymbol
+  ->Titlesymbol)
 
 (defn convert-case
   "Converts the case of a string according to the rule for the first
@@ -53,3 +61,5 @@
 (defconversion "snake_case"           clojure.string/lower-case clojure.string/lower-case "_")
 (defconversion "kebab-case"           clojure.string/lower-case clojure.string/lower-case "-")
 (defconversion "HTTP-Header-Case"     camel-snake-kebab.internals.misc/capitalize-http-header camel-snake-kebab.internals.misc/capitalize-http-header "-")
+(defconversion "Sentencecase"         clojure.string/capitalize clojure.string/lower-case " ")
+(defconversion "TitleCase"            clojure.string/capitalize clojure.string/capitalize " ")
